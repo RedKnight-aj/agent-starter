@@ -1,0 +1,12 @@
+name: Star This Repo
+
+on:
+  watch:
+    types: [started]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Thank you for starring!
+        run: echo "Thanks for starring agent-starter!"
