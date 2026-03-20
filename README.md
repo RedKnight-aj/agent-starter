@@ -1,35 +1,45 @@
-# 🚀 Agent Starter - Production-Ready AI Agent in 5 Minutes
+# 🚀 Agent Starter - AI Agent Template for Production
 
 <div align="center">
 
 [![Stars](https://img.shields.io/github/stars/RedKnight-aj/agent-starter)](https://github.com/RedKnight-aj/agent-starter/stargazers)
 [![Forks](https://img.shields.io/github/forks/RedKnight-aj/agent-starter)](https://github.com/RedKnight-aj/agent-starter/network)
+[![NPM](https://img.shields.io/npm/v/agent-starter)](https://www.npmjs.com/package/agent-starter)
 [![License](https://img.shields.io/github/license/RedKnight-aj/agent-starter)](https://github.com/RedKnight-aj/agent-starter)
 
-**Deploy a production-ready AI agent in 5 minutes. Multi-provider, MCP-ready, one-click deploy.**
+**Production-ready AI agent template. Deploy in 5 minutes.**
 
 </div>
 
-## ✨ Why This?
+---
+
+## ⭐ Why Agent Starter?
 
 | Problem | Solution |
 |---------|----------|
-| Starting from scratch takes days | Clone and run in 5 minutes |
-| Hard to integrate multiple providers | Built-in multi-provider support |
-| No MCP tools | Plug-and-play MCP integration |
+| Building AI agents from scratch takes days | Clone → configure → run in 5 minutes |
+| Hard to integrate multiple LLM providers | Built-in OpenAI, Anthropic, Ollama support |
+| No MCP tools integration | Plug-and-play MCP tools |
 | Deployment is painful | One-click deploy buttons |
+| No production features | Rate limiting, error handling included |
+
+---
 
 ## ✨ Features
 
 | Feature | Description |
 |---------|-------------|
-| 🔄 **Multi-Provider** | OpenAI, Anthropic, Ollama, Google Gemini |
-| 🔌 **MCP Ready** | Built-in MCP tool support |
-| 🌐 **Web UI** | Beautiful chat interface included |
-| 🚀 **One-Click Deploy** | Vercel, Railway, Render, Docker |
-| 🔐 **Security** | Rate limiting, input sanitization |
-| 📊 **Monitoring** | Built-in analytics |
+| 🤖 **Multi-Provider** | OpenAI GPT-4, Anthropic Claude, Ollama local models |
+| 🔌 **MCP Ready** | Model Context Protocol tool integration |
+| 🌐 **REST API** | Built-in Express server |
+| 🐳 **Docker** | Production-ready Docker configuration |
+| 📊 **Rate Limiting** | Prevent abuse, protect your API |
 | 💬 **Streaming** | Real-time token streaming |
+| 🔐 **Error Handling** | Production-grade error management |
+| 📝 **TypeScript** | Full type safety |
+| 🧪 **Examples** | Ready-to-use code examples |
+
+---
 
 ## 🚀 Quick Start
 
@@ -43,168 +53,66 @@ npm install
 
 # Configure
 cp .env.example .env
-# Add your API keys
+# Add your OPENAI_API_KEY or ANTHROPIC_API_KEY
 
 # Run
 npm run dev
 ```
 
-That's it! Open http://localhost:3000
-
-## 📦 Supported Providers
-
-| Provider | Model | Environment Variable |
-|----------|-------|---------------------|
-| OpenAI | gpt-4o, gpt-4o-mini | `OPENAI_API_KEY` |
-| Anthropic | claude-3-5-sonnet | `ANTHROPIC_API_KEY` |
-| Ollama | llama3, mistral | (local) |
-| Google | gemini-pro | `GOOGLE_API_KEY` |
-
-## 🔌 MCP Integration
-
-Add MCP tools with one line:
-
-```typescript
-// src/tools/mcp.ts
-import { MCPTool } from './mcp';
-
-export const mcpTools = [
-  new MCPTool({
-    name: "brave_search",
-    server: "brave-search",
-    config: { api_key: process.env.BRAVE_API_KEY }
-  }),
-  new MCPTool({
-    name: "filesystem", 
-    server: "filesystem",
-    config: { root: "./data" }
-  }),
-  new MCPTool({
-    name: "github",
-    server: "github",
-    config: { token: process.env.GITHUB_TOKEN }
-  })
-];
-```
-
-## 🖥️ Web Interface
-
-Beautiful, responsive chat UI with:
-- 📝 Rich text editor
-- 💬 Message history
-- 📊 Token usage stats
-- 🔄 Model switching
-- 🌙 Dark/Light theme
-- 📱 Mobile responsive
-
-## 📦 Deploy Anywhere
-
-### Vercel (Recommended)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RedKnight-aj/agent-starter)
-
-```bash
-# Or from CLI
-npx vercel deploy --prod
-```
-
-### Railway
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/agent-starter)
-
-### Docker
-```bash
-# Build
-docker build -t agent-starter .
-
-# Run
-docker run -p 3000:3000 --env-file .env agent-starter
-```
-
-### Docker Compose
-```bash
-docker-compose up -d
-```
-
-## 📁 Project Structure
-
-```
-agent-starter/
-├── src/
-│   ├── agents/
-│   │   └── index.ts        # Agent logic
-│   ├── providers/
-│   │   ├── openai.ts       # OpenAI provider
-│   │   ├── anthropic.ts    # Anthropic provider
-│   │   └── ollama.ts       # Ollama provider
-│   ├── tools/
-│   │   └── mcp.ts          # MCP integration
-│   └── ui/
-│       └── chat.tsx         # Chat interface
-├── public/
-│   └── logo.svg
-├── .env.example            # Environment template
-├── package.json
-└── README.md
-```
-
-## 🔧 Configuration
-
-Create `.env`:
-
-```env
-# Choose your provider
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
-GOOGLE_API_KEY=...
-
-# Optional: MCP tools
-BRAVE_API_KEY=...
-GITHUB_TOKEN=...
-
-# App settings
-PORT=3000
-NODE_ENV=development
-```
-
-## 🤖 Use It For
-
-- 🤖 AI chatbots
-- 📚 Research assistants  
-- 📝 Writing assistants
-- 💻 Code assistants
-- 🎫 Customer support bots
-
-## 📊 Performance
-
-| Metric | Value |
-|--------|-------|
-| Cold Start | <2s |
-| Response Time | <500ms |
-| Token/Message | ~1000 |
-
-## 🤝 Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b feature/amazing`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing`)
-5. Open a Pull Request
-
-## 📝 License
-
-MIT License - feel free to use in your projects!
-
-## ⭐ If This Helped
-
-Star this repo and share it! It helps others find this tool.
+**That's it!** Your AI agent is running at http://localhost:3000
 
 ---
 
-**Built with ❤️ by [RedKnight](https://github.com/RedKnight-aj)**
+## 📦 Installation (NPM)
 
-## 📖 Examples
+```bash
+npm install agent-starter
+```
+
+```typescript
+import { Agent } from 'agent-starter';
+
+const agent = new Agent({
+  provider: 'openai',
+  model: 'gpt-4o',
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+const response = await agent.chat('Hello!');
+```
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+
+```env
+# Provider (openai, anthropic, ollama)
+PROVIDER=openai
+
+# Model
+MODEL=gpt-4o
+
+# API Keys
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+
+# Optional: MCP Tools
+BRAVE_API_KEY=...
+GITHUB_TOKEN=...
+
+# Server
+PORT=3000
+```
+
+---
+
+## 🛠️ Usage Examples
 
 ### Simple Chatbot
-\`\`\`typescript
+
+```typescript
 import { Agent } from './src/agents';
 
 const agent = new Agent({
@@ -214,17 +122,105 @@ const agent = new Agent({
 });
 
 const response = await agent.chat('Hello!');
-\`\`\`
+console.log(response);
+```
 
-### Multi-turn Conversation
-The agent maintains context across messages.
+### Multi-Provider
 
-See \`examples/\` for more.
+```typescript
+// Switch providers easily
+const openai = new Agent({ provider: 'openai', model: 'gpt-4o', ... });
+const anthropic = new Agent({ provider: 'anthropic', model: 'claude-3-5-sonnet', ... });
+const ollama = new Agent({ provider: 'ollama', model: 'llama3', ... });
+```
 
-## 🐳 Docker
+### REST API Server
 
-\`\`\`bash
+```typescript
+// Already included! Run and use:
+POST /chat { "message": "Hello" }
+GET /health
+POST /clear
+```
+
+---
+
+## 🐳 Deploy
+
+### Docker
+
+```bash
 docker-compose up
-\`\`\`
+```
 
-See \`docker/\` for configurations.
+### Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RedKnight-aj/agent-starter)
+
+### Railway
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/agent-starter)
+
+---
+
+## 📁 Project Structure
+
+```
+agent-starter/
+├── src/
+│   ├── agents/        # Core agent logic
+│   ├── providers/     # LLM provider integration
+│   ├── tools/         # MCP tools
+│   ├── middleware/    # Rate limiting
+│   ├── server/        # REST API
+│   └── utils/         # Utilities
+├── examples/          # Usage examples
+├── docker/            # Docker configs
+└── package.json
+```
+
+---
+
+## 🔍 Search Keywords
+
+This template helps with:
+
+- AI agent template
+- OpenAI agent
+- Anthropic Claude agent
+- LLM agent framework
+- MCP server template
+- AI chatbot template
+- Production AI agent
+- Node.js AI agent
+- TypeScript AI assistant
+- Multi-provider LLM
+- AI agent boilerplate
+- LangChain alternative
+- Custom GPT agent
+- AI automation
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create your feature branch
+3. Commit and push
+4. Open a Pull Request
+
+---
+
+## 📝 License
+
+MIT - Free to use!
+
+---
+
+## ⭐ If This Helped
+
+Star this repo and share it!
+
+---
+
+**Built with ❤️ by [RedKnight](https://github.com/RedKnight-aj)**
