@@ -200,3 +200,31 @@ Star this repo and share it! It helps others find this tool.
 ---
 
 **Built with ❤️ by [RedKnight](https://github.com/RedKnight-aj)**
+
+## 📖 Examples
+
+### Simple Chatbot
+\`\`\`typescript
+import { Agent } from './src/agents';
+
+const agent = new Agent({
+  provider: 'openai',
+  model: 'gpt-4o',
+  apiKey: process.env.OPENAI_API_KEY!,
+});
+
+const response = await agent.chat('Hello!');
+\`\`\`
+
+### Multi-turn Conversation
+The agent maintains context across messages.
+
+See \`examples/\` for more.
+
+## 🐳 Docker
+
+\`\`\`bash
+docker-compose up
+\`\`\`
+
+See \`docker/\` for configurations.
