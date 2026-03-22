@@ -1,0 +1,67 @@
+# npm ignore
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+coverage/
+.nyc_output/
+
+# Docs source
+docs/
+
+# Examples (too big for package)
+examples/
+
+# Development
+*.ts
+!*.d.ts
+tsconfig.json
+
+# Git
+.git/
+.github/
+
+# CI/CD
+.gitignore
+CONTRIBUTING.md
+CHANGELOG.md
+SECURITY.md
+
+# Docker
+docker/
+Dockerfile
+docker-compose.yml
+
+# Scripts
+scripts/
+
+# Content
+content/
+docs/
+
+# Other
+SOUL.md
+*.md

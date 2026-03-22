@@ -2,10 +2,10 @@
 
 <div align="center">
 
-[![Stars](https://img.shields.io/github/stars/RedKnight-aj/agent-starter)](https://github.com/RedKnight-aj/agent-starter/stargazers)
-[![Forks](https://img.shields.io/github/forks/RedKnight-aj/agent-starter)](https://github.com/RedKnight-aj/agent-starter/network)
-[![NPM](https://img.shields.io/npm/v/agent-starter)](https://www.npmjs.com/package/agent-starter)
+[![CI](https://github.com/RedKnight-aj/agent-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/RedKnight-aj/agent-starter/actions)
+[![npm version](https://img.shields.io/npm/v/agent-starter)](https://www.npmjs.com/package/agent-starter)
 [![License](https://img.shields.io/github/license/RedKnight-aj/agent-starter)](https://github.com/RedKnight-aj/agent-starter)
+[![Node.js](https://img.shields.io/node/v/agent-starter)](https://nodejs.org)
 
 **Production-ready AI agent template. Deploy in 5 minutes.**
 
